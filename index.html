@@ -5,13 +5,23 @@
     <link rel="icon" href="media.png" type="image/x-icon">
     <script>
         function resetZoom() {
-            document.body.style.zoom = "150%";
+            document.body.style.zoom = "120%";
         }
         
         window.onload = function() {
             resetZoom();
             window.addEventListener("resize", resetZoom);
         };
+        function redirectMobileUsers() {
+            // Regular expression to check if the user agent is a mobile device
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                window.location.href = "index mobile.html"; // Redirect to the mobile page
+            }
+        }
+        
+        // Call the function when the page loads
+        window.onload = redirectMobileUsers;
     </script>
 <style>
 img {
